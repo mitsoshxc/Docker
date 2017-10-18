@@ -1,0 +1,9 @@
+docker stop chatserver
+
+docker rm chatserver
+
+docker run -d -t \
+	-p 1969:1969 \
+	--name=chatserver \
+	-v /home/dimitris/Desktop/server.logs:/root/server.logs \
+	docker.chatserver:latest
