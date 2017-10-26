@@ -5,7 +5,9 @@ RUN yum -y update && \
 	curl --silent --location https://rpm.nodesource.com/setup_6.x && \
 	yum -y update && \
 	yum install -y nodejs && \
-	touch /root/server.logs
+	touch /root/server.logs && \
+	firewall-cmd --zone=public --permanent --add-port=1969/tcp && \
+	firewall-cmd --reload
 
 ADD ChatServer /root/ChatServer
 
