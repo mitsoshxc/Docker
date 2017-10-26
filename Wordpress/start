@@ -1,0 +1,12 @@
+docker stop wordpress
+
+docker rm wordpress
+
+docker run -d \
+	-e WORDPRESS_DB_PASSWORD=root \
+	--name wordpress \
+	--link mysql-server:mysql \
+	-p 5080:80 \
+	-v /home/dimitris/Desktop/wp-files:/var/www/html \
+	--privileged=true \
+	wordpress

@@ -1,0 +1,7 @@
+#
+# [MySQL]
+# Issue with -v parameter -- permission denied --> run with ' --privileged=true ' parameter
+# 
+# [PhpMyAdmin]
+# Issue not logging in --> dont forget -e PMA_HOST=mysql-server
+#
