@@ -1,0 +1,23 @@
+mysql-server:
+    image: mysql
+    environment:
+     - MYSQL_ROOT_PASSWORD=root
+     - MYSQL_DATABASE=wordpress
+	restart: always
+	privileged: true
+    volumes:
+     - ./database:/var/lib/mysql
+
+wordpress:
+    image: wordpress
+    links:
+     - mysql-server:mysql
+    environment:
+     - WORDPRESS_DB_PASSWORD=root
+	restart: always
+	privileged: true
+    ports:
+     - 5080:80	 
+    volumes:
+     - ./code:/code
+     - ./html:/var/www/html
