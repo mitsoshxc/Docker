@@ -5,3 +5,5 @@
 # [PhpMyAdmin]
 # Issue not logging in --> dont forget -e PMA_HOST=mysql-server
 #
+# [Wordpress-php]
+# Issue 'File not found' --> wp files path must match with nginx and wordpress container
