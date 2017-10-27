@@ -6,7 +6,7 @@ docker run -d \
 	-e WORDPRESS_DB_PASSWORD=root \
 	--name wordpress \
 	--link mysql-server:mysql \
-	-p 5080:80 \
-	-v /home/dimitris/Desktop/wp-files:/var/www/html \
+	-p 9000:9000 \
+	-v /home/dimitris/Documents/wp-files:/var/www/html \
 	--privileged=true \
-	wordpress
+	wordpress:fpm

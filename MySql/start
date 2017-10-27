@@ -5,6 +5,6 @@ docker rm mysql-server
 docker run -d --name mysql-server \
 	-e MYSQL_ROOT_PASSWORD=root \
 	-p 3306:3306 \
-	-v /home/dimitris/Desktop/SQL:/var/lib/mysql \
+	-v /home/dimitris/Documents/MySql:/var/lib/mysql \
 	--privileged=true \
 	mysql:latest
