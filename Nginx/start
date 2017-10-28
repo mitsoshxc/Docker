@@ -6,7 +6,7 @@ docker run -d \
 	--name nginx \
 	-p 80:80 \
 	--link wordpress \
-	-v /home/dimitris/Documents/wp-files:/var/www/html \
-	-v /home/dimitris/Documents/wp-conf:/etc/nginx/conf.d \
+	-v $HOME/Documents/wp-files:/var/www/html \
+	-v $HOME/Documents/wp-conf:/etc/nginx/conf.d \
 	--privileged=true \
 	nginx:latest

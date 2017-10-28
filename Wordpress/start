@@ -7,6 +7,6 @@ docker run -d \
 	--name wordpress \
 	--link mysql-server:mysql \
 	-p 9000:9000 \
-	-v /home/dimitris/Documents/wp-files:/var/www/html \
+	-v $HOME/Documents/wp-files:/var/www/html \
 	--privileged=true \
 	wordpress:fpm
