@@ -2,9 +2,10 @@ docker stop sql-server
 
 docker rm sql-server
 
-docker run -e "ACCEPT_EULA=Y" \
-	-e "MSSQL_SA_PASSWORD=SECure1234" \
+docker run -d --name=sql-server \
+	-e 'ACCEPT_EULA=Y' \
+	-e 'MSSQL_SA_PASSWORD=SECure1234' \
 	-p 1433:1433 \
-	-d --name=sql-server \
-	-v /home/dimitris/Desktop/SQL:/var/opt/mssql \
+	-v $HOME/Documents/SqlServer:/var/opt/mssql \
+	--privileged=true \
 	microsoft/mssql-server-linux:latest
