@@ -1,0 +1,11 @@
+docker run -d \
+	-p 80:80 \
+	--name wptest \
+	--link mysql-server \
+	-v $HOME/Documents/wp-site:/var/www/html \
+	--privileged=true \
+	-e WORDPRESS_DB_HOST=mysql-server \
+	-e WORDPRESS_DB_USER=wordpress \
+	-e WORDPRESS_DB_PASSWORD=wordpress \
+	-e WORDPRESS_DB_NAME=wordpress \
+	wordpress:4.8.3-php7.0-apache
